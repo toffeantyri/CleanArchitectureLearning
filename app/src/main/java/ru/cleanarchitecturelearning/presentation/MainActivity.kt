@@ -1,7 +1,8 @@
-package ru.cleanarchitecturelearning
+package ru.cleanarchitecturelearning.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.cleanarchitecturelearning.R
 
 class MainActivity : AppCompatActivity() {
 
