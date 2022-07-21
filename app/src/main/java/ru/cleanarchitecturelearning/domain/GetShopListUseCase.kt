@@ -1,8 +1,8 @@
 package ru.cleanarchitecturelearning.domain
 
-class GetShopListUseCase {
+class GetShopListUseCase(private val shopListRepository: ShopListRepository) {
 
-    fun getSopList(): List<ShopItem> {
-        TODO()
+    fun getShopList(): List<ShopItem> {
+        return shopListRepository.getShopList()
     }
 }

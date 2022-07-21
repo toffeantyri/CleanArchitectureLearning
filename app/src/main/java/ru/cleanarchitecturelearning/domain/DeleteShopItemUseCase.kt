@@ -1,8 +1,8 @@
 package ru.cleanarchitecturelearning.domain
 
-class DeleteShopItemUseCase {
+class DeleteShopItemUseCase(private val shopListRepository: ShopListRepository) {
 
     fun deleteShopItem(shopItem: ShopItem) {
-
+        shopListRepository.deleteShopItem(shopItem)
     }
 }
