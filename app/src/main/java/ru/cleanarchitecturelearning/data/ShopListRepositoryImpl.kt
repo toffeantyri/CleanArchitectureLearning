@@ -35,4 +35,11 @@ object ShopListRepositoryImpl : ShopListRepository {
     override fun getShopList(): List<ShopItem> {
         return shopListItem.toList() //toList() - copy orig list
     }
+
+    init {
+        for (i in 0 until 10) {
+            val item = ShopItem("Name $i", i, true)
+            addShopItem(item)
+        }
+    }
 }
