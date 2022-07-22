@@ -10,16 +10,18 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
 
+    private var count = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        viewModel.shopList.observe(this){
-            Log.d("MyLog", it.toString() )
+        viewModel.shopList.observe(this) {
+            Log.d("MyLog", it.toString())
+
         }
 
-        viewModel.getShopList()
     }
 }
