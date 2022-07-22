@@ -10,10 +10,12 @@ object ShopListRepositoryImpl : ShopListRepository {
 
     private val shopListLiveData = MutableLiveData<List<ShopItem>>()
 
-    private val shopListItem = mutableListOf<ShopItem>()
+    private val shopListItem = sortedSetOf<ShopItem>(Comparator<ShopItem> { o1, o2 ->
+        o1.id.compareTo(o2.id)
+    })
 
     init {
-        for (i in 0 until 10) {
+        for (i in 0 until 100) {
             val item = ShopItem("Name $i", i, true)
             addShopItem(item)
         }
