@@ -24,24 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.shopList.observe(this) {
             Log.d("MyLog", it.toString())
-            showList(it)
+
         }
     }
 
-    private fun showList(list: List<ShopItem>) {
-        linearContainer.removeAllViews()
-        for (shopItem in list) {
-            val layoutId = if (shopItem.enabled) R.layout.shop_item_layout_enabled
-            else R.layout.shop_item_layout_disabled
-            val view = layoutInflater.inflate(layoutId, linearContainer, false).apply {
-                tvName.text = shopItem.name
-                tvCount.text = shopItem.count.toString()
-            }
-            view.setOnLongClickListener {
-                viewModel.changeEnableState(shopItem)
-                true
-            }
-            linearContainer.addView(view)
-        }
-    }
+
 }
